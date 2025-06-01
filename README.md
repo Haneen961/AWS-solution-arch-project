@@ -5,7 +5,7 @@ link : https://lucid.app/lucidchart/992fdc15-955f-4ec3-9b26-e06cfe1a582e/edit?vi
 # Project 1: Scalable Web Application with ALB and Auto Scaling
 
 ## Table of Contents
-- [proposed model](#proposed model)
+- [proposedmodel](#proposed model)
 - [Architecture](#architecture)
 - [Installation](#installation)
 - [Usage](#usage)
