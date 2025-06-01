@@ -2,9 +2,17 @@
 
 link : https://lucid.app/lucidchart/992fdc15-955f-4ec3-9b26-e06cfe1a582e/edit?viewport_loc=429%2C218%2C2466%2C1118%2C0_0&invitationId=inv_c3a0b878-4fec-4806-9ae1-ac99e90b2771 
 
-Project 1: Scalable Web Application with ALB and Auto Scaling
+# Project 1: Scalable Web Application with ALB and Auto Scaling
 
-1- proposed model  
+## Table of Contents
+- [1- proposed model](#1- proposed model)
+- [Architecture](#architecture)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+  
+## 1- proposed model  
 The proposed model is a highly available (using 2 avalability zones) and scalable 3-tier web application hosted on AWS. 
 ![AWS solution arch project](https://github.com/user-attachments/assets/1ee08746-d908-494f-9a32-97eb10daa82d)
 
@@ -53,6 +61,7 @@ One private subnet for the App tier (EC2 instances behind a second ALB).
 One private subnet for the DB tier (Amazon RDS Multi-AZ deployment).
 
 Architecture is organized into:
+
 NAT Gateway : to allow private subnets (App & DB tiers) to access the internet (for updates, patches, etc.)
 
 Web Tier: Handles client requests.
