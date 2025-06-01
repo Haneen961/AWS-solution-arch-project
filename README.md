@@ -4,19 +4,18 @@ link : https://lucid.app/lucidchart/992fdc15-955f-4ec3-9b26-e06cfe1a582e/edit?vi
 
 # Project 1: Scalable Web Application with ALB and Auto Scaling
 
-## Table of Contents
-- [proposedmodel](#proposed model)
-- [Architecture](#architecture)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
+## 📚 Table of Contents
+- [Proposed Model](#proposed-model)
+- [Main AWS Services to Build the System](#main-aws-services-to-build-the-system)
+- [Security Best Practices (IAM Roles and Security Groups)](#security-best-practices-iam-roles-and-security-groups)
+- [Project Architecture](#project-architecture)
+- [How the System Operates](#how-the-system-operates)
   
-## proposed model  
+## Proposed Model  
 The proposed model is a highly available (using 2 avalability zones) and scalable 3-tier web application hosted on AWS. 
 ![AWS solution arch project](https://github.com/user-attachments/assets/1ee08746-d908-494f-9a32-97eb10daa82d)
 
-2- Main AWS Services to build the system :
+## 🧰 Main AWS Services to Build the System
 
 Amazon EC2: Hosts web and application servers in Auto Scaling groups.
 
@@ -34,7 +33,7 @@ NAT Gateway: Allows outbound internet access from private subnets.
 
 Internet Gateway: Enables communication between instances in the public subnet and the internet.
 
-3- security best practices (IAM roles and security groups)
+## 🔐 Security Best Practices (IAM Roles and Security Groups)
 
 IAM Roles: Applied to EC2 instances and services to grant least-privilege access to AWS resources (e.g., RDS, S3).
 
@@ -48,7 +47,7 @@ DB Tier SG: Restricts access to the App tier and allows only necessary ports (e.
 
 Private Subnets: Application and database servers are hosted in private subnets to prevent direct internet access.
 
-4- Project architecture : 
+## 🏗️ Project Architecture
 
 The system is deployed in two Availability Zones to ensure high availability. Each AZ contains:
 
@@ -70,18 +69,12 @@ App Tier: Business logic and processing.
 
 DB Tier: Persistent data storage using Amazon RDS.
 
-5- How the system operate : 
+## ⚙️ How the System Operates
 
-  1- Users access the application through the Application Load Balancer in the Web tier.
-
-  2- Traffic is routed to EC2 instances in Auto Scaling Groups deployed across public subnets in different AZs.
-
-  3- The Web tier forwards requests to the App tier through a second ALB, which balances the load among backend EC2 instances.
-
-  4- The App tier communicates with the Amazon RDS database hosted in the DB tier (private subnet).
-
-  5- Amazon CloudWatch monitors system health and performance.
-
-  6- If anomalies or failures occur, Amazon SNS sends alerts to administrators.
-
-  7- Auto Scaling Groups ensure that instances are scaled in or out depending on traffic load, maintaining availability and cost efficiency.
+1. Users access the application through the **Application Load Balancer** in the **Web tier**.
+2. Traffic is routed to **EC2 instances** in **Auto Scaling Groups** deployed across **public subnets in different AZs**.
+3. The **Web tier** forwards requests to the **App tier** through a **second ALB**, which balances the load among backend EC2 instances.
+4. The **App tier** communicates with the **Amazon RDS database** hosted in the **DB tier (private subnet)**.
+5. **Amazon CloudWatch** monitors system health and performance.
+6. If anomalies or failures occur, **Amazon SNS** sends alerts to administrators.
+7. **Auto Scaling Groups** ensure that instances are scaled in or out depending on traffic load, maintaining availability and cost efficiency.
