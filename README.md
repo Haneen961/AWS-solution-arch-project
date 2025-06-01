@@ -9,6 +9,7 @@ The proposed model is a highly available (using 2 avalability zones) and scalabl
 ![AWS solution arch project](https://github.com/user-attachments/assets/1ee08746-d908-494f-9a32-97eb10daa82d)
 
 2- Main AWS Services to build the system :
+
 Amazon EC2: Hosts web and application servers in Auto Scaling groups.
 
 Application Load Balancer (ALB): Distributes traffic across multiple EC2 instances in the Web and App tiers.
@@ -26,6 +27,7 @@ NAT Gateway: Allows outbound internet access from private subnets.
 Internet Gateway: Enables communication between instances in the public subnet and the internet.
 
 3- security best practices (IAM roles and security groups)
+
 IAM Roles: Applied to EC2 instances and services to grant least-privilege access to AWS resources (e.g., RDS, S3).
 
 Security Groups:
@@ -39,6 +41,7 @@ DB Tier SG: Restricts access to the App tier and allows only necessary ports (e.
 Private Subnets: Application and database servers are hosted in private subnets to prevent direct internet access.
 
 4- Project architecture : 
+
 The system is deployed in two Availability Zones to ensure high availability. Each AZ contains:
 
 One public subnet for the Web tier (EC2 instances behind an ALB).
@@ -59,6 +62,7 @@ App Tier: Business logic and processing.
 DB Tier: Persistent data storage using Amazon RDS.
 
 5- How the system operate : 
+
   1- Users access the application through the Application Load Balancer in the Web tier.
 
   2- Traffic is routed to EC2 instances in Auto Scaling Groups deployed across public subnets in different AZs.
